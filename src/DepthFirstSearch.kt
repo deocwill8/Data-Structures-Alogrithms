@@ -7,6 +7,7 @@ class Node(name: String, children:MutableList<Node>?) {
         for (child in this.children) {
             child.depthFirstSearch(childList)
         }
+
         // the list is never being overridden
         // so it is adding children
         // to the end of the list
