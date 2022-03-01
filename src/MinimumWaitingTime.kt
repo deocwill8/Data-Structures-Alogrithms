@@ -3,6 +3,7 @@ class MinimumWaitingTime {
     fun minimumWaitingTime(queries: MutableList<Int>): Int {
         queries.sort()
         var minWaitTime = 0
+        // keep looping until you hit the end of the collection
         for (query in 0 until queries.size) {
             val itemsLeft = (queries.size -1) - query
             val currentQueryTime = queries[query]
