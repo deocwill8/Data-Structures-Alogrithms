@@ -5,33 +5,31 @@ class ProductSum {
             var sum = 0
             var depth = 1
             for(item in array) {
-                if(item is Int) {
-                    sum += item
-                    println("Integer is $item")
-                }
-                if(item is List<*>) {
-                    //productSum(item, depth)
-                    println("Integer is $item")
+                when (item) {
+                    is Int -> {
+                        sum += item
+                        //println("Integer is $item")
+                    }
+                    is List<*> -> {
+                        sum += productSum(item)
+                        //productSum(item, depth)
+                        //println("List is $item")
+                    }
+                    else -> println("item not recognized")
                 }
             }
             println("Sum is $sum")
             return -1
         }
 
-        fun productSum(array: List<*>, depth: Int): Int {
-            val sum = 0
-            val depth = 1
-            for(item in array) {
-                if(item is Int) {
-                    println("Integer is $item")
-                }
-                if(item is List<*>) {
-                    println("List is $item")
-                }
-            }
-
-            return -1
-        }
+//        fun productSum(array: List<*>, depth: Int): Int {
+//            val sum = 0
+//            val depth = 1
+//            for(item in array) {
+//                println("The number $item was printed from the given list")
+//            }
+//            return -1
+//        }
     }
 }
 
